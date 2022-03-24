@@ -7,6 +7,7 @@
 
   &_title-container {
     height: 2.9em;
+    padding-left: 1.2em;
   }
 
   &_content-container {
@@ -22,7 +23,7 @@
   }
 
   &_right-btn {
-    max-width: 10em;
+    max-width: 16em;
   }
 }
 
@@ -41,5 +42,5 @@
 .process-form-btn-container {
   width: 100%;
   position: absolute;
-  bottom: 5em;
+  bottom: 6em;
 }

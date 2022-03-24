@@ -16,15 +16,15 @@ function Sidebar({ title, children, handleClose }: IProps): ReactElement {
       <div className='sidebar_inner'>
         <img src={bigRect} className='sidebar_rect' />
         <div className='sidebar_back' />
+        <div className='sidebar_btn' onClick={handleClose}>
+          <img src={plus} alt='+' className='sidebar_btn-img' />
+        </div>
         <div className='sidebar_content'>
           <div className='sidebar_header'>
             <span className='sidebar_header-title'>
               <StandartTitle text={title} />
             </span>
             <div className='sidebar_btn-container'>
-              <div className='sidebar_btn' onClick={handleClose}>
-                <img src={plus} alt='+' className='sidebar_btn-img' />
-              </div>
             </div>
           </div>
           <div className='sidebar_inner-content'>
