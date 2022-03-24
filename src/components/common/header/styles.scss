@@ -1,0 +1,66 @@
+@import '../../../styles/themify';
+@import '../../../styles/sizes';
+
+.header {
+  display: flex;
+  height: $content-height;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  transition: none;
+}
+
+.logo-name {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.7em;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.logo-link {
+  display: block;
+  transform: rotate(-90deg);
+  max-width: 4em;
+  position: absolute;
+  top: 7em;
+}
+
+.menu-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .menu-item {
+    display: flex;
+    padding: 1.5em 0;
+    margin-bottom: 15%;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    &_inner {
+      max-width: 4em;
+      margin: 0 0.6em;
+    }
+    &.active {
+      background: linear-gradient(167.34deg, rgba(255, 255, 255, 0.4) -0.02%, rgba(238, 237, 237, 0.4) 113.26%);
+      opacity: 0.39;
+      border-left: 0.5em solid #5182FF;
+    }
+    .link-icon {
+      margin-bottom: 0.2em;
+      img {
+        width: 1.6em;
+      }
+    }
+    .link-name {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.7em;
+      color: #FFFFFF;
+    }
+  }
+}

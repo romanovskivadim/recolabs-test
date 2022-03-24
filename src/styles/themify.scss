@@ -1,0 +1,37 @@
+@import 'color-palette';
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+/**
+ * themify - Change a css property based on the currently active theme
+ *
+ * @param  {property}     CSS property
+ * @param  {keys}         Keys defined in palette till needed value
+ *
+ * @example - @include themify('color', 'primary', 'base');
+ * @returns - color: #FFF;
+ */
+@mixin themify($property, $keys...) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      #{$property}: map-deep-get($map, $keys...);
+    }
+  }
+}
+
+@mixin color($arguments...) {
+  @include themify('color', $arguments...);
+}
+
+@mixin border-color($arguments...) {
+  @include themify('border-color', $arguments...);
+}
+
+@mixin background-color($arguments...) {
+  @include themify('background-color', $arguments...);
+}

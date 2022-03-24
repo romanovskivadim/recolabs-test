@@ -1,0 +1,49 @@
+$poppinsFontName: 'Poppins';
+
+$quicksandFontName: 'Quicksand';
+
+$montserratFontName: 'Montserrat';
+
+$trueTypeFontFormat: 'truetype';
+
+@font-face {
+  font-family: $poppinsFontName;
+  src: local($poppinsFontName), url(../assets/fonts/Poppins-Bold.ttf) format($trueTypeFontFormat);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: $poppinsFontName;
+  src: local($poppinsFontName), url(../assets/fonts/Poppins-Medium.ttf) format($trueTypeFontFormat);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: $poppinsFontName;
+  src: local($poppinsFontName), url(../assets/fonts/Poppins-Regular.ttf) format($trueTypeFontFormat);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: $poppinsFontName;
+  src: local($poppinsFontName), url(../assets/fonts/Poppins-SemiBold.ttf) format($trueTypeFontFormat);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: $quicksandFontName;
+  src: local($poppinsFontName), url(../assets/fonts/Quicksand-SemiBold.ttf) format($trueTypeFontFormat);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: $quicksandFontName;
+  src: local($quicksandFontName), url(../assets/fonts/Quicksand-SemiBold.ttf) format($trueTypeFontFormat);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: $montserratFontName;
+  src: local($montserratFontName), url(../assets/fonts/Montserrat-SemiBold.ttf) format($trueTypeFontFormat);
+  font-weight: 600;
+}

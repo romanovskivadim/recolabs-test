@@ -1,0 +1,19 @@
+@import '../../../styles/themify';
+
+
+.button {
+  width: 100%;
+  border: none;
+  background: #375589;
+  border-radius: 0.6em;
+  padding: 1em 2em;
+  cursor: pointer;
+
+  &_text {
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 0.8em;
+    text-align: center;
+    color: #FAFAFA;
+  }
+}

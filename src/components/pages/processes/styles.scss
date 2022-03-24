@@ -1,0 +1,45 @@
+@import '../../../styles/themify';
+
+.processes-page {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.8em 0 0 2.8em;
+
+  &_title-container {
+    height: 2.9em;
+  }
+
+  &_content-container {
+    max-width: 82%;
+  }
+
+  &_right {
+    width: 18%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1.4em;
+  }
+
+  &_right-btn {
+    max-width: 10em;
+  }
+}
+
+.process-form-text {
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #5F5F5F;
+  margin: 2em 0;
+}
+
+.process-form {
+  width: 85%;
+}
+
+.process-form-btn-container {
+  width: 100%;
+  position: absolute;
+  bottom: 5em;
+}

@@ -1,0 +1,22 @@
+$themes: (
+  'light': (
+    'primary': (
+      'base': #fff,
+    ),
+    'grey': (
+      'base': #727272,
+      'dark': #4D4D4D,
+      'darker': #1F1F1F,
+    ),
+    'red': (
+      'base': red,
+      'dark': #fff,
+      'darker': #fff,
+      'light': #fff,
+      'lighter': #fff,
+    ),
+    'blue': (
+      'lighter': #04D2C8,
+    ),
+  ),
+);

@@ -1,0 +1,26 @@
+@import '../../../styles/themify';
+@import '../../../styles/sizes';
+
+.main-layout {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2A3C5E -47.79%, #375A9A 111.41%);
+
+
+  &_inner {
+    background: radial-gradient(100% 105.88% at 0% 0%, #FFFFFF 0%, rgba(255, 255, 255, 0.94) 100%);
+    box-shadow: -5px -5px 250px rgba(51, 48, 48, 0.06);
+    height: $content-height;
+    width: 100%;
+    margin-right: 0.9em;
+    border-top-left-radius: 3em;
+    border-bottom-left-radius: 3em;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 2em 0 2em;
+  }
+}

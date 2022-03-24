@@ -1,0 +1,69 @@
+@import '../../../styles/themify';
+
+
+.sidebar {
+  height: 100vh;
+  border-radius: 0.4em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  background: #FCFCFC;
+  box-shadow: -10px 4px 10px rgba(0, 0, 0, 0.03);
+
+  &_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &_rect {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    left: -4%;
+  }
+
+  &_content {
+    width: 81%;
+    height: 100%;
+    margin: 2.5em 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+  }
+
+  &_back {
+    width: 90%;
+    height: 65%;
+    background: #142443;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    border-radius: 0.6em;
+    z-index: 0;
+  }
+
+  &_header-title {
+    display: block;
+    margin-top: 2em;
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_inner-content {
+    margin-top: 4em;
+  }
+
+  &_btn-img {
+    max-width: 2em;
+    cursor: pointer;
+  }
+}

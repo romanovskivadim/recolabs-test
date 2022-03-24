@@ -1,0 +1,15 @@
+export enum FORM_ERROR_MESSAGES {
+  REQUIRED = "This field is required",
+  LONG = "is too long",
+  SHORT = "is too short",
+  MANY_FILES = "is too many files ",
+  PASSWORDS_MATCH = "Passwords do not match",
+  NUMBER = "Must be a number",
+  EMAIL = "Please enter a valid email",
+  UPPERCASE = "At least 1 uppercase letter",
+  LOWERCASE = "At least 1 lowercase letter",
+  DIGIT = "At least 1 digit",
+  ONLY_TEXT = "must be without numbers",
+  PHONE = "Phone number is not valid",
+  DATE = "Date format is not valid",
+}
