@@ -2,6 +2,9 @@
 
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   border: none;
   background: #375589;
@@ -9,11 +12,77 @@
   padding: 1em 2em;
   cursor: pointer;
 
+  
+  @media (min-width:3074px) and (max-width:4609px) {
+    padding: 3em 9em;
+    border-radius: 1.2em;
+  };
+  @media (min-width:3000px) and (max-width:3073px) {
+    padding: 2.2em 7.4em;
+    border-radius: 1.2em;
+  };
+  @media (min-width:1920px) and (max-width:2305px) {
+    padding: 1.5em 7em;
+    border-radius: 1.2em;
+  };
+  @media (min-width:1920px) and (max-width:2049px) {
+    padding: 1.2em 6.6em;
+    border-radius: 0.9em;
+  };
+  @media (min-width:1709px) and (max-width:1921px) {
+    padding: 1.2em 6.2em;
+    border-radius: 0.9em;
+  };
+  @media (min-width:1538px) and (max-width:1708px) {
+    padding: 1em 6em;
+    border-radius: 0.8em;
+  };
+  @media (min-width:1398px) and (max-width:1537px) {
+    padding: 1.2em 4em;
+    border-radius: 0.8em;
+  };
+  @media (min-width:1231px) and (max-width:1397px) {
+    padding: 0.8em 5.8em;
+    border-radius: 0.7em;
+  };
+  @media (min-width:1026px) and (max-width:1230px) {
+    padding: 1em 2em;
+  };
+  @media (min-width:700px) and (max-width:1025px) {
+    padding: 1em 2em;
+  };
+
   &_text {
     font-weight: 600;
-    font-size: 1em;
+    font-size: 0.5em;
     line-height: 0.8em;
-    text-align: center;
     color: #FAFAFA;
+    white-space: nowrap;
+
+  
+    @media (min-width:3074px) and (max-width:4609px) {
+      font-size: 2.2em;
+    };
+    @media (min-width:3000px) and (max-width:3073px) {
+      font-size: 1.4em;
+    };
+    @media (min-width:1920px) and (max-width:2305px) {
+      font-size: 1.2em;
+    };
+    @media (min-width:1920px) and (max-width:2049px) {
+      font-size: 0.5em;
+    };
+    @media (min-width:1709px) and (max-width:1921px) {
+      font-size: 0.9em;
+    };
+    @media (min-width:1538px) and (max-width:1708px) {
+      font-size: 0.8em;
+    };
+    @media (min-width:1398px) and (max-width:1537px) {
+      font-size: 0.7em;
+    };
+    @media (min-width:1231px) and (max-width:1397px) {
+      font-size: 0.6em;
+    };
   }
 }

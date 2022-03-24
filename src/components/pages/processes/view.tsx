@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect, useState } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import { Formik } from "formik";
 import * as Yup from "yup";
+import api from '@/services/api';
 
 import {
   Accordion,
@@ -15,12 +16,10 @@ import {
   StandartTitle,
   TextArea,
 } from '@/components/common';
-import processes from '@/mock-files/processes.json';
 import processesLogo from '@/assets/images/processes-black.svg';
-import './styles.scss';
-import api from '@/services/api';
 import { API, FORM_ERROR_MESSAGES } from '@/consts';
 import { IMDSProcesses } from '@/models';
+import './styles.scss';
 
 interface IFormValuesType {
   name: string,
@@ -116,10 +115,16 @@ function Processes(props: RouteComponentProps): ReactElement {
               }}
               initialValues={formValues}
             >
-              {({ handleSubmit }) => (
+              {({ handleSubmit, errors, touched }) => (
                 <>
                   <form onSubmit={handleSubmit} className='process-form'>
-                    <Input type="text" name="name" placeholder='Process Name (mandatory)' />
+                    <Input
+                      type="text"
+                      name="name"
+                      placeholder='Process Name (mandatory)'
+                      helperText={errors.name}
+                      touched={touched.name}
+                    />
                     <div className='process-form-text'>
                       Select one item from thie list below and provide us with
                       the information we need in order to create your new process.
@@ -168,9 +173,11 @@ function Processes(props: RouteComponentProps): ReactElement {
               <StandartTitle text='My processes' />
             </div>
             <div className='processes-page_top'>
-              <GridArea rows={Math.ceil(processes.length / 3)} columns={3}>
+              <GridArea rows={Math.ceil(processesData.length / 3)} columns={3}>
                 {processesData.map((item) => (
-                  <Card title={item?.name} text={item?.description} icon={item?.iconUrl} />
+                  <div key={`${new Date().getMilliseconds()}${Math.random()}`}>
+                    <Card title={item?.name} text={item?.description} icon={item?.iconUrl} />
+                  </div>
                 ))}
               </GridArea>
             </div>

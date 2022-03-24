@@ -4,6 +4,7 @@
 .header {
   display: flex;
   height: $content-height;
+  align-items: center;
   position: relative;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +16,7 @@
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 600;
-  font-size: 1.7em;
+  font-size: 2.2em;
   text-align: center;
   color: #FFFFFF;
 }
@@ -25,7 +26,7 @@
   transform: rotate(-90deg);
   max-width: 4em;
   position: absolute;
-  top: 7em;
+  top: 11em;
 }
 
 .menu-wrapper {
@@ -42,7 +43,7 @@
     width: 100%;
     text-align: center;
     &_inner {
-      max-width: 4em;
+      max-width: 6em;
       margin: 0 0.6em;
     }
     &.active {
@@ -53,13 +54,13 @@
     .link-icon {
       margin-bottom: 0.2em;
       img {
-        width: 1.6em;
+        width: 3em;
       }
     }
     .link-name {
       font-style: normal;
       font-weight: normal;
-      font-size: 0.7em;
+      font-size: 0.8em;
       color: #FFFFFF;
     }
   }

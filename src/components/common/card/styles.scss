@@ -3,6 +3,8 @@
 
 .card {
   width: 100%;
+  max-width: 35em;
+  min-width: 35em;
   border-radius: 0.4em;
   position: relative;
 
@@ -43,13 +45,14 @@
     width: 75%;
     font-family: 'Quicksand';
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 1.1em;
     line-height: 2em;
     color: #666666;
     z-index: 2;
+    margin-top: 2.9em;
   }
 
   &_btn-img {
-    max-width: 2em;
+    width: 2em;
   }
 }

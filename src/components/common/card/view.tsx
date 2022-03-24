@@ -11,7 +11,7 @@ interface IProps {
 
 function Card({ title, text, icon }: IProps): ReactElement {
   return (
-    <div className='card'>
+    <div className='card' key={`${new Date().getMilliseconds()}${Math.random()}`}>
       <img src={rect} className='card_rect' />
       <div className='card_back' />
       <div className='card_content'>
