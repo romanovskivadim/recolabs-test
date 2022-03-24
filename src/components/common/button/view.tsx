@@ -3,12 +3,18 @@ import './styles.scss';
 
 interface IProps {
   text: string;
+  noRadius?: boolean;
+  disabled?: boolean;
   handleClick?: () => void;
 }
 
-function Button({ text, handleClick }: IProps): ReactElement {
+function Button({ text, noRadius, disabled, handleClick }: IProps): ReactElement {
   return (
-    <button className='button' onClick={handleClick}>
+    <button
+      disabled={disabled}
+      className={`button ${noRadius ? 'no-radius' : ''} ${disabled ? 'disabled' : ''}`}
+      onClick={handleClick}
+    >
       <span className='button_text'>{text}</span>
     </button>
   );

@@ -15,11 +15,11 @@ function Accordion({ title, children }: IProps): ReactElement {
     <div className='accordion'>
       <div className='accordion_title-container' onClick={() => setIsOpen(!isOpen)}>
         <div className='accordion_img-container'>
-          <img src={icon} alt=">" className={`accordion_img ${isOpen ? "accordion_img-open" : ""}`} />
+          <img src={icon} alt='>' className={`accordion_img ${isOpen ? 'accordion_img-open' : ''}`} />
         </div>
         <div className='accordion_title'>{title}</div>
       </div>
-      <div className={`accordion_container ${isOpen ? "accordion_open" : ""}`}>
+      <div className={`accordion_container ${isOpen ? 'accordion_open' : ''}`}>
         {children}
       </div>
     </div>

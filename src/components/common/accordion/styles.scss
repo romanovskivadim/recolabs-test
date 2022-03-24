@@ -16,11 +16,12 @@
   }
 
   &_img {
-    width: 1em;
+    width: 2em;
+    transform: rotate(180deg);
   }
 
   &_img-open {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
 
   &_title {
@@ -35,6 +36,7 @@
   &_container {
     height: 0;
     overflow: hidden;
+    padding-left: 2.9em;
   }
 
   &_open {

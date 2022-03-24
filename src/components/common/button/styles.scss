@@ -18,38 +18,40 @@
     border-radius: 1.2em;
   };
   @media (min-width:3000px) and (max-width:3073px) {
-    padding: 2.2em 7.4em;
-    border-radius: 1.2em;
+    padding: 2em 5.8em;
+    border-radius: 0.9em;
   };
   @media (min-width:1920px) and (max-width:2305px) {
-    padding: 1.5em 7em;
-    border-radius: 1.2em;
+    padding: 1.7em 5.6em;
+    border-radius: 0.9em;
   };
   @media (min-width:1920px) and (max-width:2049px) {
-    padding: 1.2em 6.6em;
-    border-radius: 0.9em;
+    padding: 1.6em 5.4em;
+    border-radius: 0.8em;
   };
   @media (min-width:1709px) and (max-width:1921px) {
-    padding: 1.2em 6.2em;
-    border-radius: 0.9em;
-  };
-  @media (min-width:1538px) and (max-width:1708px) {
-    padding: 1em 6em;
-    border-radius: 0.8em;
-  };
-  @media (min-width:1398px) and (max-width:1537px) {
-    padding: 1.2em 4em;
-    border-radius: 0.8em;
-  };
-  @media (min-width:1231px) and (max-width:1397px) {
-    padding: 0.8em 5.8em;
+    padding: 1.4em 5.2em;
     border-radius: 0.7em;
   };
+  @media (min-width:1538px) and (max-width:1708px) {
+    padding: 1.2em 5em;
+    border-radius: 0.6em;
+  };
+  @media (min-width:1398px) and (max-width:1537px) {
+    padding: 1em 4em;
+    border-radius: 0.5em;
+  };
+  @media (min-width:1231px) and (max-width:1397px) {
+    padding: 0.9em 3.8em;
+    border-radius: 0.5em;
+  };
   @media (min-width:1026px) and (max-width:1230px) {
-    padding: 1em 2em;
+    padding: 0.8em 3.4em;
+    border-radius: 0.4em;
   };
   @media (min-width:700px) and (max-width:1025px) {
-    padding: 1em 2em;
+    padding: 0.6em 2.9em;
+    border-radius: 0.3em;
   };
 
   &_text {
@@ -64,25 +66,35 @@
       font-size: 2.2em;
     };
     @media (min-width:3000px) and (max-width:3073px) {
-      font-size: 1.4em;
+      font-size: 1.1em;
     };
     @media (min-width:1920px) and (max-width:2305px) {
-      font-size: 1.2em;
+      font-size: 0.95em;
     };
     @media (min-width:1920px) and (max-width:2049px) {
-      font-size: 0.5em;
+      font-size: 0.9em;
     };
     @media (min-width:1709px) and (max-width:1921px) {
-      font-size: 0.9em;
+      font-size: 0.85em;
     };
     @media (min-width:1538px) and (max-width:1708px) {
       font-size: 0.8em;
     };
     @media (min-width:1398px) and (max-width:1537px) {
-      font-size: 0.7em;
+      font-size: 0.65em;
     };
     @media (min-width:1231px) and (max-width:1397px) {
       font-size: 0.6em;
     };
+    @media (min-width:1026px) and (max-width:1230px) {
+      font-size: 0.5em;
+    };
+    @media (min-width:700px) and (max-width:1025px) {
+      font-size: 0.45em;
+    };
   }
+}
+
+.disabled {
+  background: rgba(55, 85, 137, 0.5);
 }
