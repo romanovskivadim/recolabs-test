@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { Field } from "formik";
+import { Field } from 'formik';
 import './styles.scss';
 
 interface IProps {

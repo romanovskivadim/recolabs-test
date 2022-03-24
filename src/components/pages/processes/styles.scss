@@ -23,24 +23,29 @@
   }
 
   &_right-btn {
-    max-width: 16em;
+    max-width: 12em;
   }
 }
 
-.process-form-text {
-  font-weight: 400;
-  font-size: 1em;
-  line-height: 1.4em;
-  color: #5F5F5F;
-  margin: 2em 0;
-}
-
 .process-form {
-  width: 85%;
-}
+  width: 85%; 
 
-.process-form-btn-container {
-  width: 100%;
-  position: absolute;
-  bottom: 6em;
+  .process-form-text {
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.4em;
+    color: #5F5F5F;
+    margin: 2em 0;
+  }
+
+  .process-form-error-container {
+    margin: 1em 0;
+    color: red;
+  }
+  
+  .process-form-btn-container {
+    width: 100%;
+    position: absolute;
+    bottom: 6em;
+  }
 }

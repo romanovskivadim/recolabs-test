@@ -1,1 +1,1 @@
-export * from "./IMDSProcesses";
+export * from './IMDSProcesses';

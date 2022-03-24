@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { RouteComponentProps } from '@reach/router';
-import { Formik } from "formik";
-import * as Yup from "yup";
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 import api from '@/services/api';
 
 import {
@@ -32,6 +32,35 @@ interface IFormValuesType {
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required(FORM_ERROR_MESSAGES.REQUIRED),
+  teams: Yup.string().test(
+    'oneOfRequired',
+    `${FORM_ERROR_MESSAGES.ONE_OF_REQUIRED}`,
+    function () {
+      return (this.parent.teams || this.parent.domains || this.parent.users || this.parent.relatedTerms)
+    }
+  ),
+  domains: Yup.string().test(
+    'oneOfRequired',
+    `${FORM_ERROR_MESSAGES.ONE_OF_REQUIRED}`,
+    function () {
+      return (this.parent.teams || this.parent.domains || this.parent.users || this.parent.relatedTerms)
+    }
+  ),
+  users: Yup.string().test(
+    'oneOfRequired',
+    `${FORM_ERROR_MESSAGES.ONE_OF_REQUIRED}`,
+    function () {
+      return (this.parent.teams || this.parent.domains || this.parent.users || this.parent.relatedTerms)
+    }
+  ),
+  relatedTerms: Yup.string().test(
+    'oneOfRequired',
+    `${FORM_ERROR_MESSAGES.ONE_OF_REQUIRED}`,
+    function () {
+      return (this.parent.teams || this.parent.domains || this.parent.users || this.parent.relatedTerms)
+    }
+  ),
+  description: Yup.string(),
 });
 
 function Processes(props: RouteComponentProps): ReactElement {
@@ -40,14 +69,14 @@ function Processes(props: RouteComponentProps): ReactElement {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const formValues = {
+  const [formValues, setFormValues] = useState<IFormValuesType>({
     name: '',
     teams: '',
     domains: '',
     users: '',
     relatedTerms: '',
     description: '',
-  };
+  });
 
   const getData = async () => {
     try {
@@ -60,34 +89,43 @@ function Processes(props: RouteComponentProps): ReactElement {
 
   const createProcess = async (values: IFormValuesType) => {
     const newProcess = {
-      "md": {
-        "anchors": {
-          "domains": values.domains.split(','),
-          "relatedTerms": values.relatedTerms.split(','),
-          "teams": values.teams.split(','),
-          "users": values.users.split(','),
+      'md': {
+        'anchors': {
+          'domains': values.domains.split(','),
+          'relatedTerms': values.relatedTerms.split(','),
+          'teams': values.teams.split(','),
+          'users': values.users.split(','),
         },
-        "description": values.description,
-        "iconUrl": "https://i.imgur.com/GptSzgL.png",
-        "id": new Date().getMilliseconds().toString(),
-        "name": values.name,
+        'description': values.description,
+        'iconUrl': 'https://i.imgur.com/GptSzgL.png',
+        'id': new Date().getMilliseconds().toString(),
+        'name': values.name,
       },
-      "reportStatus": [
+      'reportStatus': [
         {
-          "processId": "processId",
-          "status": "REPORT_GENERATION_STATUS_UNSPECIFIED",
-          "timeRemaining": "timeRemaining"
+          'processId': 'processId',
+          'status': 'REPORT_GENERATION_STATUS_UNSPECIFIED',
+          'timeRemaining': 'timeRemaining'
         },
         {
-          "processId": "processId",
-          "status": "REPORT_GENERATION_STATUS_UNSPECIFIED",
-          "timeRemaining": "timeRemaining"
+          'processId': 'processId',
+          'status': 'REPORT_GENERATION_STATUS_UNSPECIFIED',
+          'timeRemaining': 'timeRemaining'
         }
       ]
     };
 
     try {
       await api.post(API.PROCESSES.GET_METADATA, newProcess);
+      setFormValues({
+        name: '',
+        teams: '',
+        domains: '',
+        users: '',
+        relatedTerms: '',
+        description: '',
+      });
+      setIsOpen(false);
       getData();
     } catch (e) {
       console.error(e)
@@ -101,8 +139,8 @@ function Processes(props: RouteComponentProps): ReactElement {
   return (
     <>
       <Head
-        title="Home Page"
-        description="General content about the site"
+        title='Home Page'
+        description='General content about the site'
       />
       <main>
         {isOpen && (
@@ -119,8 +157,8 @@ function Processes(props: RouteComponentProps): ReactElement {
                 <>
                   <form onSubmit={handleSubmit} className='process-form'>
                     <Input
-                      type="text"
-                      name="name"
+                      type='text'
+                      name='name'
                       placeholder='Process Name (mandatory)'
                       helperText={errors.name}
                       touched={touched.name}
@@ -128,6 +166,9 @@ function Processes(props: RouteComponentProps): ReactElement {
                     <div className='process-form-text'>
                       Select one item from thie list below and provide us with
                       the information we need in order to create your new process.
+                    </div>
+                    <div className='process-form-error-container'>
+                      {errors.domains || errors.name || errors.relatedTerms || errors.teams}
                     </div>
                     <Accordion title='Relevant user groups'>
                       <TextArea
@@ -138,19 +179,19 @@ function Processes(props: RouteComponentProps): ReactElement {
                     <Accordion title='Relevant domains'>
                       <TextArea
                         name='domains'
-                        placeholder='Domains'
+                        placeholder='Add at least 2 outside Domains (3rd-Paries) associated with this process, separated by commas'
                       />
                     </Accordion>
                     <Accordion title='Relevant usernames'>
                       <TextArea
                         name='users'
-                        placeholder='Users'
+                        placeholder='Add at least one username associated with this process, separated by commas'
                       />
                     </Accordion>
                     <Accordion title='Related terms'>
                       <TextArea
                         name='relatedTerms'
-                        placeholder='Related terms'
+                        placeholder='Add at least 2 related terms associated with this process, separated by commas'
                       />
                     </Accordion>
                     <TextArea
@@ -158,7 +199,12 @@ function Processes(props: RouteComponentProps): ReactElement {
                       placeholder='Process Description (Optional)'
                     />
                     <div className='process-form-btn-container'>
-                      <Button handleClick={handleSubmit} text='Save' />
+                      <Button
+                        disabled={Boolean(Object.values(errors).length)}
+                        noRadius
+                        handleClick={handleSubmit}
+                        text='Save'
+                      />
                     </div>
                   </form>
                 </>
@@ -167,7 +213,7 @@ function Processes(props: RouteComponentProps): ReactElement {
           </Sidebar>
         )}
         <PageHeader title='Process Library' icon={processesLogo} />
-        <section className="processes-page">
+        <section className='processes-page'>
           <div className='processes-page_content-container'>
             <div className='processes-page_title-container'>
               <StandartTitle text='My processes' />
