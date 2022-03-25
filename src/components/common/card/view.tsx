@@ -16,7 +16,9 @@ function Card({ title, text, icon }: IProps): ReactElement {
       <div className='card_back' />
       <div className='card_content'>
         <div className='card_header'>
-          <StandartTitle text={title} />
+          <div className='card_title'>
+            <StandartTitle text={title} />
+          </div>
           <div className='card_btn-container'>
             <div className='card_btn'>
               <img src={icon} alt={title} className='card_btn-img' />

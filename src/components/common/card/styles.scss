@@ -50,6 +50,12 @@
     color: #666666;
     z-index: 2;
     margin-top: 2.9em;
+    overflow: hidden;
+  }
+
+  &_title {
+    max-width: 80%;
+    overflow: hidden;
   }
 
   &_btn-img {
