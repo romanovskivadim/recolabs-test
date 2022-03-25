@@ -11,8 +11,8 @@ function Accordion({ title, children }: IProps): ReactElement {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const container = useRef(null);
-  const titleContainer = useRef(null);
+  const container = useRef<HTMLDivElement>(null);
+  const titleContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handler(this: HTMLElement, e: Event): void {
@@ -20,10 +20,8 @@ function Accordion({ title, children }: IProps): ReactElement {
         isOpen &&
         container.current &&
         titleContainer.current &&
-        /* @ts-ignore */
-        !titleContainer.current.contains(e.target) &&
-        /* @ts-ignore */
-        !container.current.contains(e.target)
+        !titleContainer.current.contains(e.target as HTMLDivElement) &&
+        !container.current.contains(e.target as HTMLDivElement)
       ) {
         setIsOpen(false);
       }
