@@ -23,7 +23,7 @@ interface IFormValuesType {
 };
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string().required(FORM_ERROR_MESSAGES.REQUIRED),
+  name: Yup.string().required(FORM_ERROR_MESSAGES.REQUIRED).max(28, FORM_ERROR_MESSAGES.LONG),
   teams: Yup.string().test(
     'oneOfRequired',
     `${FORM_ERROR_MESSAGES.ONE_OF_REQUIRED}`,
